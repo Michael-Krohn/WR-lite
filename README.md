@@ -36,7 +36,7 @@ source /local/grid/cmssoft/cms/cmsset_default.sh
 cd /path_to_working_area/CMSSW_10_4_0_patch1/src/
 cmsenv
 cd ExoAnalysis/WR-lite
-cmsRun python/cfg.py inputFiles=file:signalFile.root outputFile=out.root isSignal=True
+cmsRun python/cfg.py inputFiles=samples/WR500to3500.txt outputFile=out.root isSignal=True
 ```
 
 To run the analysis on signal and save training data:
@@ -45,7 +45,7 @@ source /local/grid/cmssoft/cms/cmsset_default.sh
 cd /path_to_working_area/CMSSW_10_4_0_patch1/src/
 cmsenv
 cd ExoAnalysis/WR-lite
-cmsRun python/cfg.py inputFiles=file:signalFile.root outputFile=out.root genTrainData=True  trainFile=trainFile.txt isSignal=True
+cmsRun python/cfg.py inputFiles=samples/WR500to3500.txt outputFile=out.root genTrainData=True  trainFile=trainFile.txt isSignal=True
 ```
 
 To run the analysis on background: 
