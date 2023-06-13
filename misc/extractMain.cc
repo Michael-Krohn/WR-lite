@@ -219,8 +219,9 @@ void extractMain(){
 	TCanvas * c = new TCanvas();
 	c->SetCanvasSize(1200, 600);
 	
-	
-	std::string files[43] = {"WR800_N200/out_WR800N200_",
+
+        std::string files[1] = {"../WR3500to5000/out_"};
+/*	std::string files[43] = {"WR800_N200/out_WR800N200_",
 							"WR800_N400/out_WR800N400_",
 							"WR800_N600/out_WR800N600_",
 							"WR800_N700/out_WR800N700_",
@@ -262,17 +263,18 @@ void extractMain(){
 							"WR2000_N1400/out_WR2000N1400_",
 							"WR2000_N1600/out_WR2000N1600_",
 							"WR2000_N1800/out_WR2000N1800_",
-							"WR2000_N1900/out_WR2000N1900_"}; 
-				
-	const double xsec[43] = {14.46, 10.41, 4.351, 1.473, 
+							"WR2000_N1900/out_WR2000N1900_"}; */
+	
+	const double xsec[1] = {1.}; 
+/*	const double xsec[43] = {14.46, 10.41, 4.351, 1.473, 
     	6.083, 5.023, 3.323, 1.256, 0.4125,
     	2.511, 1.947, 1.207, .4296, .1406,
     	1.321, 1.11, .825, .4887, .166, .05455,
     	.7256, .6375,.5188, .3731, .2129, .07031,.02318,
     	.4125, .3718, .3192, .2528, .1771, .09803,.03186, .01069,
-    	.2217, .1962, .1649, .1281, .08747, .04720, .01517, .005147};
+    	.2217, .1962, .1649, .1281, .08747, .04720, .01517, .005147};*/
 		
-	double fileNumber = 28;
+	double fileNumber = 1;
 	
 	TH1D * oneDhistograms1600_400[47];
 	for(int i =0; i<47; i++){
@@ -309,7 +311,7 @@ void extractMain(){
 		"leptonEtaHisto2L", "leptonPhiHisto2L", "leptonDPhiHisto2L", "leptonDRHisto2L", "leptonPtHisto2L", //88
 		"leptonEtaHisto2L", "leptonPhiHisto2L", "leptonDPhiHisto2L", "leptonDRHisto2L", "leptonPtHisto2L"}; //93	 
 	
-	for(int j = 15; j<16; j++){
+	for(int j = 0; j<1; j++){
 		
 		int oneDHistoGenCount = 6;
 		
@@ -491,7 +493,7 @@ void extractMain(){
 		}
 	}
 	
-	for(int i =0; i<47; i++){
+/*	for(int i =0; i<47; i++){
 		printThree1DHistosMass(oneDhistograms1600_400[i], oneDhistograms1600_1200[i], oneDhistograms1600_1500[i],  c, "", oneDhistoNamesMatch2[oneDMatchMerge1[i]]);
-	}
+	}*/
 }
