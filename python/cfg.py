@@ -91,10 +91,14 @@ from Configuration.AlCa.autoCond import autoCond
 process.GlobalTag = GlobalTag(process.GlobalTag, '94X_mcRun2_asymptotic_v3') #
 if not options.isMC: process.GlobalTag = GlobalTag(process.GlobalTag, '94X_dataRun2_v10')
 
-
+import FWCore.Utilities.FileUtils as FileUtils
+mylist = FileUtils.loadListFromFile (options.inputFiles[0])
+#mylist = FileUtils.loadListFromFile ('samples/WR500to3500.txt')
+readFiles = cms.untracked.vstring( *mylist)
 
 process.source = cms.Source ("PoolSource",
-	  fileNames = cms.untracked.vstring (options.inputFiles),
+	  #fileNames = cms.untracked.vstring (options.inputFiles),
+	  fileNames = readFiles,
 )
 
 

@@ -1,0 +1,8 @@
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/45D84D34-B8F9-C84A-8946-65EAC176E5DE.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/76A6AABF-B56D-4C47-BD54-D6D3417A61CB.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/897A79FA-AE67-534D-A78C-2576548BF78A.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/8DB5185C-6E36-CB44-ABD9-13534C7A4DDA.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/94E3888B-86E6-4740-A137-A84606083793.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/B4C9F838-19F7-3642-A2C8-66DE42A3574E.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/C93CAE40-31CA-9940-86B9-3F18E9E7ED55.root
+file:root://cmseos.fnal.gov//store/user/mkrohn/WR/WR_SIGNAL/WRtoNLtoLLJJ_WR3500to5000/EFA8BD98-6D45-A44F-AC27-D0ED2C5643A3.root
