@@ -54,13 +54,12 @@ source /local/grid/cmssoft/cms/cmsset_default.sh
 cd /path_to_working_area/CMSSW_10_4_0_patch1/src/
 cmsenv
 cd ExoAnalysis/WR-lite
-cmsRun python/cfg.py inputFiles=file:signalFile.root outputFile=out.root
+cmsRun python/cfg.py inputFiles=file:backgroundFile.root outputFile=out.root
 ```
 
-For iterating over more files, see the backAnalysis.sh and main.sh files in the misc folder. Naturally, the file location variables will have to be changed before any of them can be used. Further, these scripts assume that you have folders with names like WR2000N800 in existence for all the mass combinations processed.
 
 *Histogram Extraction*
-After running the analysis code there will be many root files generated with histograms. These can be extracted using the extractDY.cc, extractTTbar.cc, and extractMain.cc files in the misc folder. They will work without modificiation if you have run the shell scripts from the misc folder first, and you put the files in the directroy containg the directories like WR2000N800. To run them, simply run:
+After running the analysis code there will be a root file generated with histograms. You will need to move this to a folder for storage. Then the histograms can be extracted using the extractDY.cc, extractTTbar.cc, and extractMain.cc files in the misc folder. You will need to update the array of files and xsec, so that they point to the file you created and their lengths match. If you have run the shell scripts from the misc folder first. To run, simply run:
 ```
 root -b
 .x extractMain.cc
