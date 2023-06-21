@@ -106,6 +106,7 @@ class eventHistos {
 	
 	TH1D * m_l2MuJJhisto;
 	TH1D * m_l2ElectronJJhisto;
+	TH1D * m_fourObjectInvariantMassElectrons;
 	TH1D * m_electronEtaHisto1;
 	TH1D * m_electronPhiHisto1;
 	TH1D * m_electronDPhiHisto1;
@@ -115,6 +116,7 @@ class eventHistos {
 	TH1D * m_electron1SphericityHisto;
 	TH1D * m_electronEtaHisto1WR;
 	TH1D * m_electronNMassHisto1;
+	TH1D * m_fourObjectInvariantMassMuons;
 	TH1D * m_muonEtaHisto1;
 	TH1D * m_muonPhiHisto1;
 	TH1D * m_muonDPhiHisto1;

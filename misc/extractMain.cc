@@ -291,10 +291,10 @@ void extractMain(){
 		oneDhistograms1600_1500[i] = nullptr;
 	}
 	
-	int oneDMatchMerge1[47] = {0,2,3,4,5,6,7,8,9,10,20,21,22,23,24,25,26,27,28,38,39,40,41, 46,47,48,49,54,55,56,57,58,64,65,66,67,68,74,75,76,77,78,84,85,86,87,88};
-	int oneDMatchMerge2[47] = {1,11,12,13,14,15,16,17,18,19, 29,30,31,32,33,34,35,36,37,42,43,44,45,50,51,52,53,59,60,61,62,63,69,70,71,72,73,79,80,81,82,83,89,90,91,92,93};
+	int oneDMatchMerge1[48] = {0,2,3,4,5,6,7,8,9,10,20,21,22,23,24,25,26,27,28,38,39,40,41, 46,47,48,49,54,55,56,57,58,64,65,66,67,68,74,75,76,77,78,84,85,86,87,88,94};
+	int oneDMatchMerge2[48] = {1,11,12,13,14,15,16,17,18,19, 29,30,31,32,33,34,35,36,37,42,43,44,45,50,51,52,53,59,60,61,62,63,69,70,71,72,73,79,80,81,82,83,89,90,91,92,93,95};
 		
-	std::string oneDhistoNamesMatch2[94] = {"l2leptonJJhisto", "l2leptonJJhisto", "leptonEtaHisto1", "leptonPhiHisto1", "leptonDPhiHisto1", "leptonDRHisto1", "leptonPtHisto1", "leptonPtHisto1Scaled", "lepton1SphericityHisto", "leptonEtaHisto1WR", "leptonNMassHisto1", //10
+	std::string oneDhistoNamesMatch2[96] = {"l2leptonJJhisto", "l2leptonJJhisto", "leptonEtaHisto1", "leptonPhiHisto1", "leptonDPhiHisto1", "leptonDRHisto1", "leptonPtHisto1", "leptonPtHisto1Scaled", "lepton1SphericityHisto", "leptonEtaHisto1WR", "leptonNMassHisto1", //10
 		"leptonEtaHisto1", "leptonPhiHisto1", "leptonDPhiHisto1", "leptonDRHisto1", "leptonPtHisto1", "leptonPtHisto1Scaled", "lepton1SphericityHisto", "leptonEtaHisto1WR", "leptonNMassHisto1", //19
 		"leptonEtaHisto2", "leptonPhiHisto2", "leptonDPhiHisto2", "leptonDRHisto2", "leptonPtHisto2", "leptonPtHisto2Scaled", "lepton2SphericityHisto", "leptonEtaHisto2WR", "leptonNMassHisto2", //28
 		"leptonEtaHisto2", "leptonPhiHisto2", "leptonDPhiHisto2", "leptonDRHisto2", "leptonPtHisto2", "leptonPtHisto2Scaled", "lepton2SphericityHisto", "leptonEtaHisto2WR", "leptonNMassHisto2", //37
@@ -309,7 +309,8 @@ void extractMain(){
 		"leptonEtaHisto1L", "leptonPhiHisto1L", "leptonDPhiHisto1L", "leptonDRHisto1L", "leptonPtHisto1L", //78
 		"leptonEtaHisto1L", "leptonPhiHisto1L", "leptonDPhiHisto1L", "leptonDRHisto1L", "leptonPtHisto1L", //83
 		"leptonEtaHisto2L", "leptonPhiHisto2L", "leptonDPhiHisto2L", "leptonDRHisto2L", "leptonPtHisto2L", //88
-		"leptonEtaHisto2L", "leptonPhiHisto2L", "leptonDPhiHisto2L", "leptonDRHisto2L", "leptonPtHisto2L"}; //93	 
+		"leptonEtaHisto2L", "leptonPhiHisto2L", "leptonDPhiHisto2L", "leptonDRHisto2L", "leptonPtHisto2L", //93	 
+                "fourObjectInvariantMassleptons","fourObjectInvariantMassleptons"}; //95
 	
 	for(int j = 0; j<1; j++){
 		
@@ -346,9 +347,9 @@ void extractMain(){
 		}
 	
 		
-		int oneDHistoMatchCount = 94;
+		int oneDHistoMatchCount = 96;
 		
-		std::string oneDhistoNamesMatch[94] = {"l2MuJJhisto", "l2ElectronJJhisto", "electronEtaHisto1", "electronPhiHisto1", "electronDPhiHisto1", "electronDRHisto1", "electronPtHisto1", "electronPtHisto1Scaled", "electron1SphericityHisto", "electronEtaHisto1WR", "electronNMassHisto1", //10
+		std::string oneDhistoNamesMatch[96] = {"l2MuJJhisto", "l2ElectronJJhisto", "electronEtaHisto1", "electronPhiHisto1", "electronDPhiHisto1", "electronDRHisto1", "electronPtHisto1", "electronPtHisto1Scaled", "electron1SphericityHisto", "electronEtaHisto1WR", "electronNMassHisto1", //10
 		"muonEtaHisto1", "muonPhiHisto1", "muonDPhiHisto1", "muonDRHisto1", "muonPtHisto1", "muonPtHisto1Scaled", "muon1SphericityHisto", "muonEtaHisto1WR", "muonNMassHisto1", //19
 		"electronEtaHisto2", "electronPhiHisto2", "electronDPhiHisto2", "electronDRHisto2", "electronPtHisto2", "electronPtHisto2Scaled", "electron2SphericityHisto", "electronEtaHisto2WR", "electronNMassHisto2", //28
 		"muonEtaHisto2", "muonPhiHisto2", "muonDPhiHisto2", "muonDRHisto2", "muonPtHisto2", "muonPtHisto2Scaled", "muon2SphericityHisto", "muonEtaHisto2WR", "muonNMassHisto2", //37
@@ -363,7 +364,8 @@ void extractMain(){
 		"electronEtaHisto1L", "electronPhiHisto1L", "electronDPhiHisto1L", "electronDRHisto1L", "electronPtHisto1L", //78
 		"muonEtaHisto1L", "muonPhiHisto1L", "muonDPhiHisto1L", "muonDRHisto1L", "muonPtHisto1L", //83
 		"electronEtaHisto2L", "electronPhiHisto2L", "electronDPhiHisto2L", "electronDRHisto2L", "electronPtHisto2L", //88
-		"muonEtaHisto2L", "muonPhiHisto2L", "muonDPhiHisto2L", "muonDRHisto2L", "muonPtHisto2L"}; //93
+		"muonEtaHisto2L", "muonPhiHisto2L", "muonDPhiHisto2L", "muonDRHisto2L", "muonPtHisto2L", //93
+		"fourObjectInvariantMassMuons","fourObjectInvariantMassElectrons"}; //95
 		
 		
 		std::string leptonCompNames[23] = {"leptonEtaHisto", "leptonPhiHisto", "leptonDPhiHisto", "leptonDRHisto", "leptonPtHisto", "leptonPtHistoScaled", "leptonSphericityHisto", "leptonEtaHistoWR", "leptonNMassHisto", //0
@@ -384,7 +386,7 @@ void extractMain(){
 		
 		
 		
-		TH1D * oneDhistogramsMatch[94];
+		TH1D * oneDhistogramsMatch[96];
 		
 		for(int i =0; i<oneDHistoMatchCount; i++){
 			oneDhistogramsMatch[i] = nullptr;
@@ -448,20 +450,19 @@ void extractMain(){
 			twoDhistogramsReco[twoDRecoMerge1[i]]->Add(twoDhistogramsReco[twoDRecoMerge2[i]]);
 			print2DHistos(twoDhistogramsReco[twoDRecoMerge1[i]], c, files[j], twoDhistoNamesReco2[twoDRecoMerge1[i]]);
 		}
-		
 		//Extract and print matched histos
 		extractHistos(oneDhistogramsMatch, twoDhistogramsMatch, oneDhistoNamesMatch, twoDhistoNamesMatch, files[j], xsec[j], fileNumber, oneDHistoMatchCount, twoDHistoMatchCount, true, true );
 		
 		for(int i =0; i<oneDHistoMatchCount/2; i++){
 			oneDhistogramsMatch[oneDMatchMerge1[i]]->Add(oneDhistogramsMatch[oneDMatchMerge2[i]]);
 			print1DHistos(oneDhistogramsMatch[oneDMatchMerge1[i]], c, files[j], oneDhistoNamesMatch2[oneDMatchMerge1[i]]);
-			if(j==20){
+/*			if(j==20){
 				oneDhistograms1600_400[i] =  oneDhistogramsMatch[oneDMatchMerge1[i]];
 			} else if(j==24){
 				oneDhistograms1600_1200[i] =  oneDhistogramsMatch[oneDMatchMerge1[i]];
 			} else if(j==26){
 				oneDhistograms1600_1500[i] =  oneDhistogramsMatch[oneDMatchMerge1[i]];
-			}
+			}*/
 		}
 		for(int i =0; i<23;i++){
 			printTwo1DHistos(oneDhistogramsMatch[leptonComp1[i]], oneDhistogramsMatch[leptonComp2[i]], c, files[j], leptonCompNames[i], leptonCompTitles[i]);
@@ -487,10 +488,10 @@ void extractMain(){
 			print1DHistos(oneDhistogramsDiv[i], c, files[j], oneDhistoNamesDiv[i]);
 		}
 		
-		for(int i =0; i<twoDHistoNNCount/2; i++){
+/*		for(int i =0; i<twoDHistoNNCount/2; i++){
 			twoDhistogramsNN[twoDNNMerge1[i]]->Add(twoDhistogramsNN[twoDNNMerge2[i]]);
 			print2DHistos(twoDhistogramsNN[twoDNNMerge1[i]], c, files[j], twoDhistoNamesNN2[twoDNNMerge1[i]]);
-		}
+		}*/
 	}
 	
 /*	for(int i =0; i<47; i++){
