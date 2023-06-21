@@ -258,8 +258,8 @@ void eventHistos::book(TFileDirectory histoFolder) {
 	
 	m_l2ElectronJJhisto = m_histoFolder.make<TH1D>("l2ElectronJJhisto" , "Matched Lepton + Lead Jet + Sublead Jet Mass" , 50 , 0 , 4000 );
 	
-	m_fourObjectInvariantMassElectrons = m_histoFolder.make<TH1D>("fourObjectInvariantMassElectrons" , "4 Object Invariant Mass Electrons" , 690, 100, 7000);
-	m_fourObjectInvariantMassElectrons->GetXaxis()-> SetTitle("m_{eejj}");
+	m_fourObjectInvariantMassElectrons = m_histoFolder.make<TH1D>("fourObjectInvariantMassElectrons" , "4 Object Invariant Mass Electrons" , 138, 100, 7000);
+	m_fourObjectInvariantMassElectrons->GetXaxis()-> SetTitle("m_{lljj}");
 
 	m_electronEtaHisto1 = m_histoFolder.make<TH1D>("electronEtaHisto1" , "lepton Eta Histo" , 100, -3, 3);
 	m_electronEtaHisto1->GetXaxis()-> SetTitle("eta");
@@ -292,8 +292,8 @@ void eventHistos::book(TFileDirectory histoFolder) {
 	
 	
 	
-	m_fourObjectInvariantMassMuons = m_histoFolder.make<TH1D>("fourObjectInvariantMassMuons" , "4 Object Invariant Mass Muons" , 690, 100, 7000);
-	m_fourObjectInvariantMassMuons->GetXaxis()-> SetTitle("m_{mumujj}");
+	m_fourObjectInvariantMassMuons = m_histoFolder.make<TH1D>("fourObjectInvariantMassMuons" , "4 Object Invariant Mass Muons" , 138, 100, 7000);
+	m_fourObjectInvariantMassMuons->GetXaxis()-> SetTitle("m_{lljj}");
 
 	m_muonEtaHisto1 = m_histoFolder.make<TH1D>("muonEtaHisto1" , "lepton Eta Histo" , 100, -3, 3);
 	m_muonEtaHisto1->GetXaxis()-> SetTitle("eta");
