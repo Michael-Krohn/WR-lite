@@ -163,7 +163,7 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 	iEvent.getByToken(m_genEventInfoToken, eventInfo);
   
 	myRECOevent.count = eventInfo->weight()/fabs(eventInfo->weight());
-	myRECOevent.eventWeight = eventInfo->weight();
+	myRECOevent.eventWeight = eventInfo->weight()/fabs(eventInfo->weight());
 	
 	
 	edm::Handle<std::vector<reco::Vertex>> vertices;
