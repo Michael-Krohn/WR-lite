@@ -354,7 +354,8 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 		//Get jets with maximum pt, match with gen if not background
 		for(std::vector<pat::Jet>::const_iterator iJet = recoJetsAK4->begin(); iJet != recoJetsAK4->end(); iJet++) {
 			//Make sure jets are not around leptons
-			//if ( fabs(iJet->eta()) > 2.4) continue;
+			if ( fabs(iJet->eta()) > 2.4) continue;
+			if (iJet->eta() < 40) continue;
 			double NHF  =                iJet->neutralHadronEnergyFraction();
 			double NEMF =                iJet->neutralEmEnergyFraction();
 			double CHF  =                iJet->chargedHadronEnergyFraction();
