@@ -320,6 +320,7 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 		int jetCount = 0;
 		int q1Match = 0;
 		int q2Match = 0;
+		int bJetCount = 0;
 		
 		const pat::Electron* matchedElectron = 0;
 		const pat::Electron* matchedElectronL1 = 0;
@@ -364,6 +365,7 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 			double MUF      =            iJet->muonEnergyFraction();
 			double EUF      =            iJet->electronEnergyFraction();
 			double CHM      =            iJet->chargedMultiplicity(); 
+			double btagScore = 	     iJet->bDiscriminator("pfDeepCSVJetTags:probb") + iJet->bDiscriminator("pfDeepCSVJetTags:probbb");
 			//APPLYING TIGHT QUALITY CUTS
 			if (NHF > .9) continue;
 			if (NEMF > .9) continue;
@@ -380,6 +382,12 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 				leadJet = &(*(iJet));
 			} else if (jetCount == 1) {
 				subleadJet = &(*(iJet));
+			}
+
+			std::cout << "btagScore: " << btagScore << std::endl;
+                        //Counting the number of b-tag jets
+                        if (btagScore > 0.7527){
+				bJetCount = bJetCount + 1;
 			}
 			// Match jets with gen information if not background
 			if(!background){
@@ -441,8 +449,8 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 			}
 	  
 	  	    //If background, check that there are two jets and two electrons, otherwise check that particles match gen particles
-			if((leadJet != 0 && subleadJet != 0 && leadElectron != 0 && subleadElectron != 0 && el1Match != 0 && el2Match != 0 && q1Match != 0 && q2Match != 0) ||
-				(background && leadJet != 0 && subleadJet != 0 && leadElectron != 0 && subleadElectron != 0)){
+			if((leadJet != 0 && subleadJet != 0 && leadElectron != 0 && subleadElectron != 0 && el1Match != 0 && el2Match != 0 && q1Match != 0 && q2Match != 0 && bJetCount == 0) ||
+				(background && leadJet != 0 && subleadJet != 0 && leadElectron != 0 && subleadElectron != 0 && bJetCount == 0)){
 				std::cout << "lead jet" << leadJet->p4() << ", "<< leadJet->pt() << std::endl;
 				std::cout << "sublead jet" << subleadJet->p4() << ", "<< subleadJet->pt() << std::endl;
 				std::cout << "lead lepton" << leadElectron->p4() << ", "<< leadElectron->pt() << std::endl;
@@ -650,8 +658,8 @@ WR_MASS_PLOT::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 			}
 		  
 		    //Check whether we have a viable muon event
-			if((leadJet != 0 && subleadJet != 0 && leadMuon != 0 && subleadMuon != 0 && mu1Match != 0 && mu2Match != 0 && q1Match != 0 && q2Match != 0) ||
-				(background && leadJet != 0 && subleadJet != 0 && leadMuon != 0 && subleadMuon != 0)) {
+			if((leadJet != 0 && subleadJet != 0 && leadMuon != 0 && subleadMuon != 0 && mu1Match != 0 && mu2Match != 0 && q1Match != 0 && q2Match != 0 && bJetCount == 0) ||
+				(background && leadJet != 0 && subleadJet != 0 && leadMuon != 0 && subleadMuon != 0 && bJetCount == 0)) {
 				
 				std::cout << "lead jet" << leadJet->p4() << ", "<< leadJet->pt() << std::endl;
 				std::cout << "sublead jet" << subleadJet->p4() << ", "<< subleadJet->pt() << std::endl;
