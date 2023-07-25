@@ -200,6 +200,12 @@ void eventHistos::book(TFileDirectory histoFolder) {
 	m_jetjetMassHisto = m_histoFolder.make<TH1D>("jetjetMassHisto" , "Lead Jet + Sublead Jet Mass" , 50 , 0 , 4000 );
 	m_jetjetMassHisto->GetXaxis()-> SetTitle("jet + jet (GeV)");
 	
+	m_leadJetPtHisto = m_histoFolder.make<TH1D>("leadJetPtHisto" , "Lead Jet Pt " , 150, 0, 3000);
+	m_leadJetPtHisto->GetXaxis()-> SetTitle("p_{T} (GeV)");
+
+	m_subLeadJetPtHisto = m_histoFolder.make<TH1D>("subLeadJetPtHisto" , "sublead Jet Pt " , 150, 0, 3000);
+	m_subLeadJetPtHisto->GetXaxis()-> SetTitle("p_{T} (GeV)");
+
 	//2D
 	
 	m_subLeadMuonHisto = m_histoFolder.make<TH2D>("subLeadMuonHisto" , "Sublead Lepton" , 100, 0, 2500, 100 , 0 , 3000 );
@@ -825,6 +831,9 @@ void eventHistos::fillMuon(eventBits& event){
 	m_matchedMuonHisto->Fill(event.matchedMuonleadJsubJRecoMass, event.fullRecoMassMuon, weight);
 	m_subLeadMuonHisto->Fill(event.subMuonleadJsubJRecoMass, event.fullRecoMassMuon, weight);
 	m_leadMuonHisto->Fill(event.leadMuonleadJsubJRecoMass, event.fullRecoMassMuon, weight);
+	m_leadJetPtHisto->Fill(event.leadJetRecoPt, weight);
+	m_subLeadJetPtHisto->Fill(event.subJetRecoPt, weight);
+
 	if(!event.passedElectronReco){
 		m_leptonHisto->Fill("passed Cuts, Muon", weight);
 		if(event.failedGenPtEta){
@@ -967,6 +976,8 @@ void eventHistos::fillElectron(eventBits& event){
 	m_matchedElectronHisto->Fill(event.matchedElectronleadJsubJRecoMass, event.fullRecoMassElectron, weight);
 	m_subLeadElectronHisto->Fill(event.subElectronleadJsubJRecoMass, event.fullRecoMassElectron, weight);
 	m_leadElectronHisto->Fill(event.leadElectronleadJsubJRecoMass, event.fullRecoMassElectron, weight);
+	m_leadJetPtHisto->Fill(event.leadJetRecoPt, weight);
+	m_subLeadJetPtHisto->Fill(event.subJetRecoPt, weight);
 	
 	if(!event.passedMuonReco){
 		m_leptonHisto->Fill("passed Cuts, Electron", weight);

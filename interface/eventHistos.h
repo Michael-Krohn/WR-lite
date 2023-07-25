@@ -84,6 +84,8 @@ class eventHistos {
 	TH1D * m_subMuJJhisto;
 	TH1D * m_subElectronJJhisto;
 	TH1D * m_jetjetMassHisto;
+	TH1D * m_leadJetPtHisto;
+	TH1D * m_subLeadJetPtHisto;
 	
 	//2D
 	
